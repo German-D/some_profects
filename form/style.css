@@ -1,0 +1,286 @@
+html {
+  font-family: "Roboto", sans-serif;
+  --main-color: #222222;
+  --sub-color: #999999;
+  --hint-color: #ef903c;
+  --form-color: #cdcdcd;
+}
+
+body {
+  max-width: 675px;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  color: var(--main-color);
+}
+
+.requered::after {
+  content: " *";
+  color: var(--hint-color);
+}
+
+@keyframes trigger {
+  0% {
+    transform: translateX(0);
+  }
+  15% {
+    transform: translateX(3px);
+  }
+  30% {
+    transform: translateX(0);
+  }
+  45% {
+    transform: translateX(3px);
+  }
+  60% {
+    transform: translateX(0px);
+  }
+  80% {
+    transform: translateX(3px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+.requered {
+}
+
+.requered.error {
+  animation-name: trigger;
+  animation-duration: 1s;
+  animation-delay: 0.5s;
+  color: red;
+}
+
+h2 {
+  font-size: 14px;
+  line-height: 16px;
+  margin: 0;
+  font-weight: 400;
+}
+
+header h1 {
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 35px;
+  margin: 130px 0 10px 0;
+}
+
+header p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: var(--sub-color);
+  margin: 0;
+  margin-bottom: 40px;
+}
+
+.email {
+  display: flex;
+  flex-direction: column;
+}
+
+.email h2 {
+  margin-bottom: 8px;
+}
+
+.email input {
+  height: 46px;
+  width: 260px;
+  box-sizing: border-box;
+  background: #ffffff;
+  border: 1px solid #cdcdcd;
+  border-radius: 8px;
+  padding-left: 15px;
+  margin-bottom: 30px;
+}
+
+.photo-input__header {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 415px 1fr;
+  gap: 30px;
+  margin-bottom: 15px;
+}
+
+.photo-input__container {
+  display: flex;
+  gap: 30px;
+}
+
+.photo-input__photo-container {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.photo-input__photo {
+  width: 200px;
+  height: 200px;
+  box-sizing: border-box;
+  display: block;
+  border: 3px solid rgba(0, 0, 0, 0);
+  border-radius: 8px;
+}
+
+.photo-input__photo:hover {
+  border: 3px solid #56db41;
+}
+
+.photo-input__photo-parent {
+  position: relative;
+}
+
+/* .photo-input__photo-parent.chosen {
+  background-color: rgba(34, 34, 34, 0.7);
+} */
+
+.photo-input__photo-parent.chosen::after {
+  content: "";
+  display: block;
+  width: 200px;
+  height: 200px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 8px;
+  background-image: url(./ok.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  top: 0;
+  left: 0;
+  /* top: calc(50% - 30px); */
+  /* left: calc(50% - 30px); */
+
+  position: absolute;
+}
+
+.photo-input__photo-plus {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--form-color);
+  border-radius: 8px;
+}
+
+.photo-input__photo-plus img {
+  cursor: pointer;
+}
+
+.photo-input__add {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 415px 1fr;
+  gap: 30px;
+  grid-template-areas: "none btn";
+  margin-bottom: 30px;
+}
+
+.photo-input__add input {
+  display: none;
+}
+
+.photo-input__add--button {
+  display: flex;
+  flex-direction: column;
+  grid-area: btn;
+}
+
+.photo-input__add--button div {
+  border: 1px solid var(--form-color);
+  border-radius: 8px;
+  width: 155px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.photo-input__add--button p {
+  color: var(--sub-color);
+  font-size: 14px;
+  line-height: 16px;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  width: 260px;
+}
+
+footer h2 {
+  margin-bottom: 8px;
+}
+
+footer textarea {
+  border: 1px solid #cdcdcd;
+  border-radius: 8px;
+  height: 120px;
+  padding: 12px 15px;
+  margin-bottom: 30px;
+}
+
+footer button {
+  color: white;
+  background: var(--hint-color);
+  outline: none;
+  border: 1px solid #cdcdcd;
+  border-radius: 8px;
+  width: 131px;
+  height: 46px;
+  cursor: pointer;
+  margin-bottom: 130px;
+}
+
+.photoHolder {
+  display: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.modalContainer {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(34, 34, 34, 0.3);
+}
+
+.modal {
+  position: absolute;
+  background-color: white;
+  border: 1px solid #cdcdcd;
+  border-radius: 8px;
+  width: 400px;
+  height: 260px;
+  top: calc(50% - 130px);
+  left: calc(50% - 200px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.modal .cross {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+
+.modal .ok {
+  width: 60px;
+  height: 60px;
+}
+
+.modal h3 {
+  font-size: 30px;
+  line-height: 35px;
+  text-align: center;
+  font-weight: 400;
+  margin: 0;
+}

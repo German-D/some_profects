@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link href="./normalize.css" rel="stylesheet" />
+    <link href="./style.css" rel="stylesheet" />
+    <script src="./index.js" defer></script>
+
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <h1>Форма отправки открытки с поздравлениями</h1>
+      <p>
+        Для отправки необходимо указать только email и выбрать открытку.
+        Открытку можно выбрать из готовых или загрузить свою, но только одну
+      </p>
+    </header>
+
+    <main>
+      <div class="email">
+        <h2 class="requered">Email кому дарим</h2>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="hello@qa.studio"
+        />
+      </div>
+      <div class="photo-input__header">
+        <h2 class="requered">Выберите открытку</h2>
+        <h2 class="requered toHide">Или загрузите свою</h2>
+      </div>
+      <div class="photo-input__container">
+        <div class="photo-input__photo-container" id="photoContainer">
+          <div class="photo-input__photo-parent">
+            <img src="./23.png" class="photo-input__photo" />
+          </div>
+          <div class="photo-input__photo-parent">
+            <img src="./8.png" class="photo-input__photo" />
+          </div>
+        </div>
+
+        <div class="photo-input__photo photo-input__photo-plus toHide">
+          <label for="file">
+            <img src="./plus.svg" alt="" />
+          </label>
+        </div>
+      </div>
+      <div class="photo-input__add toHide">
+        <input type="file" name="" id="file" accept="image/*" />
+        <label for="file" class="photo-input__add--button">
+          <div>Выбрать файл</div>
+          <p>.jpg, .png, .pdf, .svg максимум 4 Мб</p>
+        </label>
+      </div>
+    </main>
+    <footer>
+      <h2>Сообщение</h2>
+      <textarea
+        maxlength="250"
+        type="text"
+        id="textarea"
+        placeholder="Не более 200 символов"
+      ></textarea>
+      <button id="send">Отправить</button>
+    </footer>
+    <div class="modalContainer hidden" id="modal">
+      <div class="modal">
+        <img src="./cross.svg" class="cross" id="cross" />
+        <img src="./ok.svg" class="ok" />
+        <h3>Открытка успешно отправлена!</h3>
+      </div>
+    </div>
+  </body>
+</html>

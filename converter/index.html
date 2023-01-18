@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link href="./normalize.css" rel="stylesheet" />
+    <link href="./style.css" rel="stylesheet" />
+    <script src="./index.js" defer></script>
+
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+      <h1>Конвертер копеек в рубли</h1>
+      <div class="container">
+        <div>
+          <p class="desc">У меня есть</p>
+          <p class="curr">КОП</p>
+          <label for="input" class="input">
+            <input type="text" size="6" id="input" placeholder="0" />
+            <p>1 КОП = 0,01 РУБ</p>
+          </label>
+        </div>
+        <img src="./arrow.svg" alt="arrow" id="button" />
+        <div>
+          <p class="desc">Сколько это будет</p>
+          <p class="curr rub">РУБ</p>
+          <div class="input">
+            <h2 id="rub">0</h2>
+            <p>1 РУБ = 100 КОП</p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
